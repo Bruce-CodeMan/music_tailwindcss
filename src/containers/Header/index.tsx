@@ -5,8 +5,13 @@
  */
 
 import Logo from "@/assets/images/logo-inverted.png"
+import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
+import { useState } from "react"
 
 const Header = () => {
+
+  const [open, setOpen] = useState(false)
+
   return (
     <>
       <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
@@ -18,16 +23,62 @@ const Header = () => {
           </div>
         </div>  
         {/* RIGHT */}
-        <div className="flex flex-1 items-center justify-end">
+        {/* mobile */}
+        <div className="p-4 md:hidden flex flex-1 justify-end text-white">
+          <button onClick={() => setOpen(true)}>
+            <Bars3Icon className="h-6 w-6"/>
+          </button>
+        </div>
+        {/* mobile end */}
+
+        {/* mobile items */}
+        {open && (
+          <div className="absolute left-0 top-[62px] bg-black w-full h-[500px] drop-shadow-xl bg-gradient-to-r from-rose-500 to-pink-500">
+            <div className="flex justify-end p-4">
+              <button onClick={() => setOpen(!open)}>
+                <XMarkIcon className="h-6 w-6"/>
+              </button>
+            </div>
+
+            {/* mobile items content */}
+            <div className="flex flex-col gap-5 text-2xl">
+              <div className="relative flex items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
+                <span>Home</span>
+              </div>
+              <div className="relative flex items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
+                <span>Lineup</span>
+              </div>
+              <div className="group relative flex flex-col items-center p-4 justify-center cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
+                <span>Tickets</span>
+                <div className="group-hover:block hidden w-full">
+                  <div className="p-4 font-bold hover:bg-white/5 transition-colors ease-in-out relative text-center">
+                    <span>Single day ticket</span>
+                  </div>
+                  <div className="p-4 font-bold hover:bg-white/5 transition-colors ease-in-out relative text-center">
+                    <span>7 day</span>
+                  </div>
+                </div>
+              </div>
+              <div className="relative flex items-center justify-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
+                <span>Support</span>
+              </div>
+
+            </div>
+          </div>
+        )}
+        {/* mobile items end */}
+
+        {/* chrome */}
+        <div className="md:flex hidden flex-1 items-center justify-end">
           <div className="relative flex h-full items-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
             <span>Home</span>
           </div>
           <div className="relative flex h-full items-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
             <span>Lineup</span>
           </div>
-          <div className="relative flex h-full items-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
+          <div className="group relative flex h-full items-center p-4 cursor-pointer font-bold text-pink-200 hover:text-zinc-200 hover:bg-white/10 transition-colors ease-in-out">
             <span>Tickets</span>
-            <div className="absolute top-full bg-pink-500 right-0 whitespace-nowrap">
+            <div className="group-hover:block hidden absolute top-full bg-pink-500 right-0 whitespace-nowrap">
               <div className="p-4 font-bold hover:bg-white/5 transition-colors ease-in-out">
                 <span>Single day ticket</span>
               </div>
@@ -40,6 +91,7 @@ const Header = () => {
             <span>Support</span>
           </div>
         </div>
+        {/* chrome end */}
       </nav>  
     </>
   )
