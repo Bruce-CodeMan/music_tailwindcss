@@ -12,6 +12,16 @@ const Content = () => {
             <div className="rounded-xl bg-white/30 py-2 px-4 text-center backdrop-blur-md">
                 <div className="relative">
                     <img src={Logo} alt="" className="w-[175px]"/>
+                    {/* custom animation */}
+                    <div className="flex items-center justify-center mt-[-70px] mb-5">
+                        <div className="flex h-14 w-14 items-center justify-center gap-1 rounded-full bg-pink-500">
+                            <div className="h-2 w-1 bg-pink-300 rounded-full animate-wavey"></div>
+                            <div className="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-200"></div>
+                            <div className="h-4 w-1 bg-pink-100 rounded-full animate-wavey aniamtion-delay-[150ms]"></div>
+                            <div className="h-3 w-1 bg-pink-200 rounded-full animate-wavey animation-delay-300"></div>
+                            <div className="h-2 w-1 bg-pink-300 rounded-full animate-wavey animation-delay-[75ms]"></div>
+                        </div>
+                    </div>
                 </div>
                 <div className="text-5xl font-bold">
                     tw: <span className="text-sky-900">mf</span>
