@@ -11,3 +11,10 @@
 
 <img src="./images/carousel.png">
 
+## How to Run this project
+
+```
+pnpm i 
+
+pnpm run dev
+```
