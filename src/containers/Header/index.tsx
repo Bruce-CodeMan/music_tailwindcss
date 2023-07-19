@@ -5,7 +5,7 @@
  */
 
 import Logo from "@/assets/images/logo-inverted.png"
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid"
+import { Bars3Icon, XMarkIcon, SunIcon, MoonIcon } from "@heroicons/react/24/solid"
 import { useState } from "react"
 
 const Header = () => {
@@ -14,10 +14,14 @@ const Header = () => {
 
   return (
     <>
+      <div id="dark-mode-toggle" className="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-orange-900">
+        <SunIcon className="dark:hidden h-6 w-6"/>
+        <MoonIcon className="hidden dark:inline w-6 h-6"/>
+      </div>
       <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-99">
         {/* LEFT */}
         <div className="flex items-center gap-2 p-2">
-          <img src={Logo} alt="" width={50}/>
+          <img src={Logo} alt="" width={50}/> 
           <div className="text-2xl font-bold">
             tw:<span className="text-sky-900">mf</span>
           </div>

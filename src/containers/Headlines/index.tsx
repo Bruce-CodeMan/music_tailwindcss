@@ -23,7 +23,7 @@ const Headlines = () => {
     }
 
     return (
-        <div className="mx-auto mt-20 max-w-screen-lg">
+        <div className="mx-auto mt-20 max-w-screen-lg text-zinc-900 dark:text-zinc-200">
             <h2 className="text-5xl font-bold">Headlines</h2>
             <p className="text-gray-400">
                 Experience the sonic delight from these made-up artists across 7 days
