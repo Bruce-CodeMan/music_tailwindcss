@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500">
+      <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-99">
         {/* LEFT */}
         <div className="flex items-center gap-2 p-2">
           <img src={Logo} alt="" width={50}/>
