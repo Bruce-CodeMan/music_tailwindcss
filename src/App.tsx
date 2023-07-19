@@ -8,7 +8,8 @@
 import Header from "./containers/Header"
 import Content from "./containers/Content"
 import Headlines from "./containers/Headlines"
-
+import Lineup from "./containers/Lineup"
+import Ticket from "./containers/Ticket"
 
 function App() {
 
@@ -17,6 +18,8 @@ function App() {
       <Header />
       <Content />
       <Headlines />
+      <Lineup />
+      <Ticket />
     </div>
 
   )

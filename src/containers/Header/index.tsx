@@ -24,7 +24,7 @@ const Header = () => {
     <>
       <div 
         onClick={() => darkModeHandler()}
-        className="fixed top-24 right-5 inline-block w-12 cursor-pointer rounded-lg bg-white text-3xl"
+        className="fixed z-10 top-24 right-5 inline-block w-12 cursor-pointer rounded-lg bg-white text-3xl"
       >
         <SunIcon className="dark:hidden h-12 w-12 p-2"/>
         <MoonIcon className="hidden dark:inline w-12 h-12 p-2"/>
