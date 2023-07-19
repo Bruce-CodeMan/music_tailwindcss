@@ -12,13 +12,24 @@ const Header = () => {
 
   const [open, setOpen] = useState(false)
 
+  const darkModeHandler = () => {
+    if(document.body.classList.contains("dark")){
+      document.body.classList.remove("dark")
+    }else{
+      document.body.classList.add("dark")
+    }
+  }
+
   return (
     <>
-      <div id="dark-mode-toggle" className="fixed top-24 right-0 inline-block w-12 cursor-pointer rounded-l-lg bg-orange-900">
-        <SunIcon className="dark:hidden h-6 w-6"/>
-        <MoonIcon className="hidden dark:inline w-6 h-6"/>
+      <div 
+        onClick={() => darkModeHandler()}
+        className="fixed top-24 right-5 inline-block w-12 cursor-pointer rounded-lg bg-white text-3xl"
+      >
+        <SunIcon className="dark:hidden h-12 w-12 p-2"/>
+        <MoonIcon className="hidden dark:inline w-12 h-12 p-2"/>
       </div>
-      <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-99">
+      <nav className="sticky flex top-0 bg-gradient-to-r from-rose-500 to-pink-500 z-10">
         {/* LEFT */}
         <div className="flex items-center gap-2 p-2">
           <img src={Logo} alt="" width={50}/> 

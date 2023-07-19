@@ -13,11 +13,11 @@ import Headlines from "./containers/Headlines"
 function App() {
 
   return (
-    <>
+    <div className="dark:bg-zinc-900">
       <Header />
       <Content />
       <Headlines />
-    </>
+    </div>
 
   )
 }
